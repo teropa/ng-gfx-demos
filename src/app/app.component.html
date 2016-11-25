@@ -86,5 +86,11 @@
 
 <h1>Canvas Animations</h1>
 
+<p>When we want to animate things with canvas, we need to draw every frame because of the immediate-mode rendering model. We can do this using <code>requestAnimationFrame()</code>, for which we can set up a loop using component lifecycle hooks.</p>
 
-<h2>Render Loop</h2>
+<p>Our application data will need to have some notion of time for this to work, e.g. to draw intermediate frames, we need to know about the timing of the animation relative to the time of the current frame: When it was started, when it should end.</p>
+
+<app-animated-canvas-logo>
+</app-animated-canvas-logo>
+
+
