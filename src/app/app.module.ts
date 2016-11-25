@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BasicLogoComponent } from './basic-logo/basic-logo.component';
+import { LogoWithBindingsComponent } from './logo-with-bindings/logo-with-bindings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicLogoComponent
+    BasicLogoComponent,
+    LogoWithBindingsComponent
   ],
   imports: [
     BrowserModule
