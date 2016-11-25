@@ -43,7 +43,11 @@
 
 <h2>Drawing Changing Data</h2>
 
-Try OnPush and without
+<p>Often the data you want to put on a canvas changes over time. In that case you need to redraw every time it changes.</p>
+<p>One good approach is to rely on the <code>OnChanges</code> lifecycle hook. It'll be called when the component inputs change and you can redraw based on that. Note that you'll need to use immutable data structures for changes to be noticed.</p>
+
+<app-changing-canvas-logo>
+</app-changing-canvas-logo>
 
 
 
