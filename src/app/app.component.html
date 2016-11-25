@@ -32,9 +32,14 @@
 
 <h1>Canvas</h1>
 
+<p>Canvas provided immediate-mode raster graphics, which is a very different type of API than SVG, and a lot more foreign to component-based frameworks such as Angular. You can still use it though - just wrap it inside a component.</p>
 
 <h2>Basic Canvas Drawing</h2>
 
+<p>We can make a canvas, inject it to our component class as a <code>@ViewChild</code>, and then draw on it using the native canvas API.</p>
+
+<app-basic-canvas-logo>
+</app-basic-canvas-logo>
 
 <h2>Drawing Changing Data</h2>
 
@@ -65,7 +70,7 @@ Try OnPush and without
 
 <h2>With GSAP</h2>
 
-<p>With the Greensock library we can unlock a whole number of advanced animation features that aren't available via CSS or Element.animate (which is what ngAnimate) uses.</p>
+<p>With the Greensock library we can unlock a whole number of advanced animation features that aren't available via CSS or Element.animate (which is what ngAnimate uses).</p>
 
 <p>For example, we can morph shapes, as we do hear for polygon paths.</p>
 

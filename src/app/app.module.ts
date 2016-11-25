@@ -9,6 +9,7 @@ import { LogoWithComponentsModule } from './logo-with-components/logo-with-comp
 import { AnimatedLogoCssComponent } from './animated-logo-css/animated-logo-css.component';
 import { AnimatedLogoNganimateComponent } from './animated-logo-nganimate/animated-logo-nganimate.component';
 import { AnimatedLogoGsapComponent } from './animated-logo-gsap/animated-logo-gsap.component';
+import { BasicCanvasLogoComponent } from './basic-canvas-logo/basic-canvas-logo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AnimatedLogoGsapComponent } from './animated-logo-gsap/animated-logo-gs
     LogoWithBindingsComponent,
     AnimatedLogoCssComponent,
     AnimatedLogoNganimateComponent,
-    AnimatedLogoGsapComponent
+    AnimatedLogoGsapComponent,
+    BasicCanvasLogoComponent
   ],
   imports: [
     BrowserModule,
