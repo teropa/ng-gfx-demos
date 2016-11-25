@@ -52,14 +52,16 @@ Try OnPush and without
 <p>You can animate basic SVG attributes and transforms with CSS just like you can HTML. But you can only animate those things that are CSS styleable, or so-called <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute#Presentation_attributes">presentation attributes</a> like strokes, fills. Not regular attributes like x, y.</p>
 
 <app-animated-logo-css>
-
 </app-animated-logo-css>
-
-<h2>With SMIL</h2>
-
 
 <h2>With NgAnimate</h2>
 
+<p>ngAnimate is implemented on top of the Web Animations API, which itself is designed to work with SVG (it is, in fact, designed to unify HTML/CSS animations with the deprected SMIL standard). This means we can use ngAnimate with SVG without any special preparations.</p>
+
+<p>With ngAnimate it is easier to connect animations to what's going on in the application: Events, state changes, etc.</p>
+
+<app-animated-logo-nganimate>
+</app-animated-logo-nganimate>
 
 <h2>With GSAP</h2>
 
