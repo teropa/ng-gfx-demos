@@ -8,6 +8,7 @@ import { LogoWithBindingsComponent } from './logo-with-bindings/logo-with-bindin
 import { LogoWithComponentsModule } from './logo-with-components/logo-with-components.module';
 import { AnimatedLogoCssComponent } from './animated-logo-css/animated-logo-css.component';
 import { AnimatedLogoNganimateComponent } from './animated-logo-nganimate/animated-logo-nganimate.component';
+import { AnimatedLogoGsapComponent } from './animated-logo-gsap/animated-logo-gsap.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AnimatedLogoNganimateComponent } from './animated-logo-nganimate/animat
     BasicLogoComponent,
     LogoWithBindingsComponent,
     AnimatedLogoCssComponent,
-    AnimatedLogoNganimateComponent
+    AnimatedLogoNganimateComponent,
+    AnimatedLogoGsapComponent
   ],
   imports: [
     BrowserModule,
