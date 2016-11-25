@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  NgZone,
+  OnDestroy,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import { List } from 'immutable';
 import { Particle } from './particle';
 
@@ -15,11 +24,11 @@ export class CanvasLogoComponent implements OnInit, OnDestroy {
   @ViewChild('canvas') canvasRef: ElementRef;
   private alive: boolean;
 
-  constructor() { }
+  constructor(private ngZone: NgZone) { }
 
   ngOnInit() {
     this.alive = true;
-    this.paint();
+    this.ngZone.runOutsideAngular(() => this.paint());
   }
 
   ngOnDestroy() {
