@@ -71,10 +71,12 @@ export class CanvasLogoComponent implements OnInit, OnDestroy {
       let y = this.scale(particle.y);
       let age = Date.now() - particle.createdAt;
       let alpha = Math.max(0, 1 - age / MAX_AGE);
-      ctx.fillStyle = `rgba(221,0,49,${alpha})`;
-      ctx.beginPath();
-      ctx.arc(x, y, (1 - alpha) * 100, 0, 2 * Math.PI);
-      ctx.fill();
+      if (alpha > 0) {
+        ctx.fillStyle = `rgba(221,0,49,${alpha})`;
+        ctx.beginPath();
+        ctx.arc(x, y, (1 - alpha) * 100, 0, 2 * Math.PI);
+        ctx.fill();
+      }
     });
 
     requestAnimationFrame(() => this.paint());

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { List, Range } from 'immutable';
 import { Particle } from './particle';
 
@@ -7,16 +7,17 @@ import { Particle } from './particle';
   templateUrl: './animated-canvas-logo.component.html',
   styleUrls: ['./animated-canvas-logo.component.scss']
 })
-export class AnimatedCanvasLogoComponent implements OnInit, OnDestroy {
+export class AnimatedCanvasLogoComponent {
   particles = List<Particle>();
   private intervalId: any;
 
-  ngOnInit() {
-    this.intervalId = setInterval(() => this.updateParticles(), 100)
-  }
-
-  ngOnDestroy() {
-    clearInterval(this.intervalId);
+  startStop() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    } else {
+      this.intervalId = setInterval(() => this.updateParticles(), 100)
+    }
   }
 
   private updateParticles() {
