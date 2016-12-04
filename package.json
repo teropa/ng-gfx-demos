@@ -20,6 +20,7 @@
     "@angular/platform-browser": "2.2.1",
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/router": "3.2.1",
+    "boids": "^2.0.0",
     "core-js": "^2.4.1",
     "gsap": "^1.19.0",
     "immutable": "^3.8.1",

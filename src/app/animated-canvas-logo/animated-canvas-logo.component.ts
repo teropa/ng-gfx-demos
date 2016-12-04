@@ -8,34 +8,10 @@ import { Particle } from './particle';
   styleUrls: ['./animated-canvas-logo.component.scss']
 })
 export class AnimatedCanvasLogoComponent {
-  particles = List<Particle>();
-  private intervalId: any;
+  running = false;
 
   startStop() {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-      this.intervalId = null;
-    } else {
-      this.intervalId = setInterval(() => this.updateParticles(), 100)
-    }
+    this.running = !this.running;
   }
 
-  private updateParticles() {
-    const createdAt = Date.now();
-    if (this.particles.isEmpty()) {
-      this.particles = <List<Particle>>this.particles.concat(Range(0, 30).map(() => ({
-        x: Math.random() * 250,
-        y: Math.random() * 250,
-        createdAt
-      })));
-    } else {
-    this.particles = <List<Particle>>this.particles
-      .push({
-        x: Math.random() * 250,
-        y: Math.random() * 250,
-        createdAt
-      })
-      .rest();
-    }
-  }
 }
