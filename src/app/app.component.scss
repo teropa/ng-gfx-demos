@@ -3,3 +3,13 @@
   max-width: 768px;
   margin: 0 auto;
 }
+
+nav a {
+  display: inline-block;
+  padding-right: 1em;
+  color: blue;
+
+  &.active {
+    font-weight: bolder;
+  }
+}

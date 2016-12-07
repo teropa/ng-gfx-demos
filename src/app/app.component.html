@@ -1,96 +1,16 @@
-<h1>SVG</h1>
+<h1>Angular SVG & Canvas Demos</h1>
+<nav>
+  <a routerLink="/svg/basic" routerLinkActive="active">Basic SVG</a>
+  <a routerLink="/svg/bindings" routerLinkActive="active">SVG with Bindings</a>
+  <a routerLink="/svg/components" routerLinkActive="active">SVG with Components</a>
+  <a routerLink="/svg/css-animation" routerLinkActive="active">CSS-animated SVG</a>
+  <a routerLink="/svg/ng-animation" routerLinkActive="active">ngAnimated SVG</a>
+  <a routerLink="/svg/gsap-animation" routerLinkActive="active">GSAP-animated SVG</a>
+  <a routerLink="/canvas/basic" routerLinkActive="active">Basic Canvas</a>
+  <a routerLink="/canvas/changes" routerLinkActive="active">Canvas with Bindings</a>
+  <a routerLink="/canvas/animated" routerLinkActive="active">Canvas with Animation</a>
+</nav>
 
 
-<h2>Basic SVG support</h2>
-
-<p>You can just put an <code>&lt;svg&gt;</code> tag in a component and go to town. You can also style the SVG stuff using component styles.</p>
-
-<app-basic-logo>
-</app-basic-logo>
-
-
-<h2>SVG Data & Event Binding</h2>
-
-<p>You can use regular <code>[dataBinding]</code> syntax with SVG elements, but since SVG attributes generally aren't present in DOM nodes as writable properties, you need to use the <code>attr.</code> prefix to set them: <code>[attr.path]</code>.
-
-<p>Event handlers work as you'd expect with <code>(event)</code></p>
-
-<app-logo-with-bindings>
-</app-logo-with-bindings>
-
-<h2>Components In SVG</h2>
-
-<p>You can also use Angular components inside SVG. But there are a couple of things to note about this.</p>
-
-<p>First of all, we can't use regular component elements within SVG, because you end up having unknown elements within your SVG code. SVG is XML so you can't just throw anything in there like you can with HTML. But you can make use of the fact that the "selector" of a component doesn't necessarily have to be an element selector. It can be any CSS selector, such as an attribute selector!</p>
-
-<p>Secondly, since the elements in your inner SVG components aren't going to be enclosed in an &lt;svg&gt; tag (which is in <em>another</em> component template), Angular won't automatically know those components are in the SVG namespace. So you need to explicitly mention that with an <code>svg:</code> prefix in the element names.</p>
-
-<app-logo-with-components>
-</app-logo-with-components>
-
-
-<h1>Canvas</h1>
-
-<p>Canvas provided immediate-mode raster graphics, which is a very different type of API than SVG, and a lot more foreign to component-based frameworks such as Angular. You can still use it though - just wrap it inside a component.</p>
-
-<h2>Basic Canvas Drawing</h2>
-
-<p>We can make a canvas, inject it to our component class as a <code>@ViewChild</code>, and then draw on it using the native canvas API.</p>
-
-<app-basic-canvas-logo>
-</app-basic-canvas-logo>
-
-<h2>Drawing Changing Data</h2>
-
-<p>Often the data you want to put on a canvas changes over time. In that case you need to redraw every time it changes.</p>
-<p>One good approach is to rely on the <code>OnChanges</code> lifecycle hook. It'll be called when the component inputs change and you can redraw based on that. Note that you'll need to use immutable data structures for changes to be noticed.</p>
-
-<app-changing-canvas-logo>
-</app-changing-canvas-logo>
-
-
-
-
-
-<h1>SVG Animations</h1>
-
-
-<h2>With CSS</h2>
-
-<p>You can animate basic SVG attributes and transforms with CSS just like you can HTML. But you can only animate those things that are CSS styleable, or so-called <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute#Presentation_attributes">presentation attributes</a> like strokes, fills. Not regular attributes like x, y.</p>
-
-<app-animated-logo-css>
-</app-animated-logo-css>
-
-<h2>With NgAnimate</h2>
-
-<p>ngAnimate is implemented on top of the Web Animations API, which itself is designed to work with SVG (it is, in fact, designed to unify HTML/CSS animations with the deprected SMIL standard). This means we can use ngAnimate with SVG without any special preparations.</p>
-
-<p>With ngAnimate it is easier to connect animations to what's going on in the application: Events, state changes, etc.</p>
-
-<app-animated-logo-nganimate>
-</app-animated-logo-nganimate>
-
-<h2>With GSAP</h2>
-
-<p>With the Greensock library we can unlock a whole number of advanced animation features that aren't available via CSS or Element.animate (which is what ngAnimate uses).</p>
-
-<p>For example, we can morph shapes, as we do hear for polygon paths.</p>
-
-<app-animated-logo-gsap>
-</app-animated-logo-gsap>
-
-
-
-
-<h1>Canvas Animations</h1>
-
-<p>When we want to animate things with canvas, we need to draw every frame because of the immediate-mode rendering model. We can do this using <code>requestAnimationFrame()</code>, for which we can set up a loop using component lifecycle hooks.</p>
-
-<p>Our application data will need to have some notion of time for this to work, e.g. to draw intermediate frames, we need to know about the timing of the animation relative to the time of the current frame: When it was started, when it should end.</p>
-
-<app-animated-canvas-logo>
-</app-animated-canvas-logo>
-
-
+<router-outlet>
+</router-outlet>

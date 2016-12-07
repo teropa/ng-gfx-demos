@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BasicLogoComponent } from './basic-logo/basic-logo.component';
 import { LogoWithBindingsComponent } from './logo-with-bindings/logo-with-bindings.component';
@@ -26,6 +27,7 @@ import { BasicCanvasLogoComponent } from './basic-canvas-logo/basic-canvas-logo.
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     LogoWithComponentsModule,
     ChangingCanvasLogoModule,
     AnimatedCanvasLogoModule

@@ -11,8 +11,6 @@ export class CanvasLogoComponent implements OnChanges {
   @Input() particles: Particle[];
   @ViewChild('canvas') canvasRef: ElementRef;
 
-  constructor() { }
-
   ngOnChanges() {
     let ctx: CanvasRenderingContext2D =
       this.canvasRef.nativeElement.getContext('2d');

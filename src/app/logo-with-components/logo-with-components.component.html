@@ -1,3 +1,11 @@
+<h2>Components In SVG</h2>
+
+<p>You can also use Angular components inside SVG. But there are a couple of things to note about this.</p>
+
+<p>First of all, we can't use regular component elements within SVG, because you end up having unknown elements within your SVG code. SVG is XML so you can't just throw anything in there like you can with HTML. But you can make use of the fact that the "selector" of a component doesn't necessarily have to be an element selector. It can be any CSS selector, such as an attribute selector!</p>
+
+<p>Secondly, since the elements in your inner SVG components aren't going to be enclosed in an &lt;svg&gt; tag (which is in <em>another</em> component template), Angular won't automatically know those components are in the SVG namespace. So you need to explicitly mention that with an <code>svg:</code> prefix in the element names.</p>
+
 <svg viewBox="0 0 250 250">
   <g app-logo-left />
   <g app-logo-right />
