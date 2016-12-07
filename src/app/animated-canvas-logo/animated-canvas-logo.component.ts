@@ -31,7 +31,7 @@ export class AnimatedCanvasLogoComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.running = true;
-    this.paint();
+    this.ngZone.runOutsideAngular(() => this.paint());
   }
 
   ngOnDestroy() {
