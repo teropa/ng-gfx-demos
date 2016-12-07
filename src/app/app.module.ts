@@ -8,12 +8,12 @@ import { LogoWithBindingsComponent } from './logo-with-bindings/logo-with-bindin
 
 import { LogoWithComponentsModule } from './logo-with-components/logo-with-components.module';
 import { ChangingCanvasLogoModule } from './changing-canvas-logo/changing-canvas-logo.module';
-import { AnimatedCanvasLogoModule } from './animated-canvas-logo/animated-canvas-logo.module';
 
 import { AnimatedLogoCssComponent } from './animated-logo-css/animated-logo-css.component';
 import { AnimatedLogoNganimateComponent } from './animated-logo-nganimate/animated-logo-nganimate.component';
 import { AnimatedLogoGsapComponent } from './animated-logo-gsap/animated-logo-gsap.component';
 import { BasicCanvasLogoComponent } from './basic-canvas-logo/basic-canvas-logo.component';
+import { AnimatedCanvasLogoComponent } from './animated-canvas-logo/animated-canvas-logo.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +24,13 @@ import { BasicCanvasLogoComponent } from './basic-canvas-logo/basic-canvas-logo.
     AnimatedLogoNganimateComponent,
     AnimatedLogoGsapComponent,
     BasicCanvasLogoComponent,
+    AnimatedCanvasLogoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LogoWithComponentsModule,
-    ChangingCanvasLogoModule,
-    AnimatedCanvasLogoModule
+    ChangingCanvasLogoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

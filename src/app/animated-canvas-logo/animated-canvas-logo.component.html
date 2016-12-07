@@ -4,7 +4,5 @@
 
 <p>Our application data will need to have some notion of time for this to work, e.g. to draw intermediate frames, we need to know about the timing of the animation relative to the time of the current frame: When it was started, when it should end.</p>
 
-<button (click)="startStop()">Start/stop</button>
-
-<app-canvas-logo [running]=running>
-</app-canvas-logo>
+<canvas #canvas width="800" height="500">
+</canvas>

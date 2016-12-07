@@ -1,3 +1,13 @@
+@keyframes oscillate-enlarge {
+  from { transform: scale(1) }
+  to { transform: scale(8)}
+}
+
+@keyframes oscillate-reduce {
+  from { transform: scale(1) }
+  to { transform: scale(0.125)}
+}
+
 .group {
   animation: oscillate-enlarge 3s ease-in-out 0s infinite alternate;
   transform-origin: 125px 115px;
@@ -9,14 +19,4 @@
 .left {
   animation: oscillate-reduce 3.2s ease-in-out 0s infinite alternate-reverse;
   transform-origin: 125px 115px;
-}
-
-@keyframes oscillate-enlarge {
-  from { transform: scale(1) }
-  to { transform: scale(8)}
-}
-
-@keyframes oscillate-reduce {
-  from { transform: scale(1) }
-  to { transform: scale(0.125)}
 }

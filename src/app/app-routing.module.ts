@@ -1,6 +1,7 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AnimatedCanvasLogoComponent } from './animated-canvas-logo/animated-canvas-logo.component';
 import { AnimatedLogoCssComponent } from './animated-logo-css/animated-logo-css.component';
 import { AnimatedLogoNganimateComponent } from './animated-logo-nganimate/animated-logo-nganimate.component';
 import { AnimatedLogoGsapComponent } from './animated-logo-gsap/animated-logo-gsap.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'svg/ng-animation', component: AnimatedLogoNganimateComponent },
   { path: 'svg/gsap-animation', component: AnimatedLogoGsapComponent },
   { path: 'canvas/basic', component: BasicCanvasLogoComponent },
+  { path: 'canvas/animated', component: AnimatedCanvasLogoComponent},
   { path: '', redirectTo: 'svg/basic', pathMatch: 'full'}
 ];
 
