@@ -1,4 +1,13 @@
-import { Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  NgZone,
+  OnDestroy,
+  OnInit,
+  Renderer,
+  ViewChild
+} from '@angular/core';
 import boids, { Flock } from 'boids';
 
 const MAX_AGE = 3000;
@@ -14,7 +23,9 @@ export class AnimatedCanvasLogoComponent implements OnInit, OnDestroy {
   private running: boolean;
   private flock: Flock;
 
-  constructor(private ngZone: NgZone) {
+  constructor(private ngZone: NgZone,
+              private elRef: ElementRef,
+              private renderer: Renderer) {
     this.flock = boids({
       boids: 200,             // The amount of boids to use
       speedLimit: 4,          // Max steps to take per tick
@@ -30,6 +41,7 @@ export class AnimatedCanvasLogoComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.onResize();
     // Make the flock visible by ticking a few times
     for (let i=0 ; i<50 ; i++) {
       this.flock.tick();
@@ -40,6 +52,15 @@ export class AnimatedCanvasLogoComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.running = false;
+  }
+
+  @HostListener('window:resize') onResize() {
+    // Make sure canvas width doesn't exceed available width and
+    // preserve its aspect ratio.
+    const width = Math.min(800, this.elRef.nativeElement.offsetWidth);
+    const height = width / 800 * 500;
+    this.renderer.setElementStyle(this.canvasRef.nativeElement, 'width', `${width}px`);
+    this.renderer.setElementStyle(this.canvasRef.nativeElement, 'height', `${height}px`);
   }
 
   toggleSimulation() {
