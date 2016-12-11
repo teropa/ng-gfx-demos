@@ -2,3 +2,9 @@ svg {
   width: 250px;
   height: 250px;
 }
+
+// There are Firefox issues if anything but the base SVG element
+// reacts to mouse events.
+circle, polygon, path {
+  pointer-events: none;
+}
