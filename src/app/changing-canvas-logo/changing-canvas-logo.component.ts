@@ -11,12 +11,28 @@ export class ChangingCanvasLogoComponent implements OnInit, OnDestroy {
   private intervalId: any;
 
   ngOnInit() {
-    this.intervalId = setInterval(() => this.updateParticles(), 100)
+    this.updateParticles();
   }
 
   ngOnDestroy() {
-    clearInterval(this.intervalId);
+    if (this.isChanging()) {
+      clearInterval(this.intervalId);
+    }
   }
+
+  isChanging() {
+    return !!this.intervalId;
+  }
+
+  toggleChanging() {
+    if (this.isChanging()) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    } else {
+      this.intervalId = setInterval(() => this.updateParticles(), 100)
+    }
+  }
+
 
   private updateParticles() {
     this.particles = [];

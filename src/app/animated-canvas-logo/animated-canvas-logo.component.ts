@@ -30,27 +30,38 @@ export class AnimatedCanvasLogoComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.running = true;
-    this.ngZone.runOutsideAngular(() => this.paint());
+    // Make the flock visible by ticking a few times
+    for (let i=0 ; i<50 ; i++) {
+      this.flock.tick();
+    }
+    // Paint once to make things visible
+    this.paint(false);
   }
 
   ngOnDestroy() {
     this.running = false;
   }
 
-
-  private paint() {
-    if (!this.running) {
-      return;
+  toggleSimulation() {
+    this.running = !this.running;
+    if (this.running) {
+      this.ngZone.runOutsideAngular(() => this.paint(true));
     }
+  }
 
+  private paint(loop = true) {
+    // Paint current frame
     let ctx: CanvasRenderingContext2D =
       this.canvasRef.nativeElement.getContext('2d');
 
+    // Background
     ctx.fillStyle = 'rgb(221, 0, 49)';
     ctx.fillRect(0, 0, 800, 500);
 
+    // Advance flock
     this.flock.tick();
+
+    // Draw flock
     ctx.beginPath();
     ctx.fillStyle = `rgb(255,255,255)`;
     for (const [x, y, speedX, speedY] of this.flock.boids) {
@@ -62,7 +73,11 @@ export class AnimatedCanvasLogoComponent implements OnInit, OnDestroy {
       this.paintA(ctx);
       ctx.restore();
     };
-    requestAnimationFrame(() => this.paint());
+
+    // Schedule next
+    if (loop && this.running) {
+      requestAnimationFrame(() => this.paint(loop));
+    }
   }
 
   private paintA(ctx: CanvasRenderingContext2D) {

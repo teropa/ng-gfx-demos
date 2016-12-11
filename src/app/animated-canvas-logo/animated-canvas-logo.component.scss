@@ -1,4 +1,14 @@
 canvas {
+  display: block;
   width: 800px;
   height: 500px;
+  margin: 0 auto;
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: .5em;
+  button {
+    padding: 1em 2em;
+  }
 }
