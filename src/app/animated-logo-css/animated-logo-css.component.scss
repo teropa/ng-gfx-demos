@@ -12,11 +12,12 @@
   animation: oscillate-enlarge 3s ease-in-out 0s infinite alternate;
   transform-origin: 125px 115px;
 }
+.shield {
+  animation: oscillate-reduce 3.2s ease-in-out 0s infinite alternate-reverse;
+  transform-origin: 125px 115px;
+}
 .a {
   animation: oscillate-reduce 3.1s ease-in-out 0s infinite alternate;
   transform-origin: 125px 115px;
 }
-.left {
-  animation: oscillate-reduce 3.2s ease-in-out 0s infinite alternate-reverse;
-  transform-origin: 125px 115px;
-}
+

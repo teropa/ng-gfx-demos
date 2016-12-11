@@ -7,7 +7,7 @@
 <p>Secondly, since the elements in your inner SVG components aren't going to be enclosed in an &lt;svg&gt; tag (which is in <em>another</em> component template), Angular won't automatically know those components are in the SVG namespace. So you need to explicitly mention that with an <code>svg:</code> prefix in the element names.</p>
 
 <svg viewBox="0 0 250 250">
-  <g app-logo-left />
-  <g app-logo-right />
-  <g app-logo-a />
+  <svg:g app-logo-left />
+  <svg:g app-logo-right />
+  <svg:g app-logo-a />
 </svg>

@@ -22,8 +22,8 @@ export class ChangingCanvasLogoComponent implements OnInit, OnDestroy {
     this.particles = [];
     for (let i = 0 ; i < 50000 ; i++) {
       this.particles.push({
-        x: Math.random() * 250,
-        y: Math.random() * 250
+        x: Math.random() * 500,
+        y: Math.random() * 500
       });
     }
   }

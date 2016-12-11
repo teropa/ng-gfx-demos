@@ -1,10 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
-import 'gsap';
-
-declare const TweenMax: any;
-declare const Cubic: any;
-
 @Component({
   selector: 'app-animated-logo-gsap',
   templateUrl: './animated-logo-gsap.component.html',
@@ -23,8 +18,7 @@ export class AnimatedLogoGsapComponent implements OnInit {
       },
       repeat: -1,
       yoyo: true,
-      ease:
-      Cubic.easeInOut
+      ease: Cubic.easeInOut
     });
     TweenMax.to(this.right.nativeElement, 1, {
       attr: {
